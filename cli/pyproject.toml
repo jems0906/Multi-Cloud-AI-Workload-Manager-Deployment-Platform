@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flexai"
+version = "0.1.0"
+description = "Multi-cloud AI workload deployment CLI"
+requires-python = ">=3.11"
+dependencies = [
+  "typer==0.16.0",
+  "rich==14.1.0",
+  "httpx==0.28.1",
+]
+
+[project.scripts]
+flexai = "flexai_sdk.main:app"
