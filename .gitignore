@@ -6,4 +6,5 @@ dist/
 build/
 coverage/
 backend/data/deployments.json
+backend/data/auth_audit.log
 .dashboard-cache/
