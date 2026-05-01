@@ -12,15 +12,11 @@ services:
 
   - type: web
     name: flexai-dashboard
-    env: static
+    env: node
     plan: free
     rootDir: dashboard
     buildCommand: npm ci && npm run build && printf "window.FLEXAI_API_URL='%s';\n" "$FLEXAI_API_URL" > dist/public-config.js
-    staticPublishPath: dist
+    startCommand: npx serve -s dist -l $PORT
     envVars:
       - key: FLEXAI_API_URL
         value: https://flexai-api.onrender.com
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
