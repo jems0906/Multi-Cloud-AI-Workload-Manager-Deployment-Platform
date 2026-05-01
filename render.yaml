@@ -10,8 +10,9 @@ services:
       - key: PYTHON_VERSION
         value: 3.11.9
 
-  - type: static
+  - type: web
     name: flexai-dashboard
+    env: static
     plan: free
     rootDir: dashboard
     buildCommand: npm ci && npm run build && printf "window.FLEXAI_API_URL='%s';\n" "$FLEXAI_API_URL" > dist/public-config.js
