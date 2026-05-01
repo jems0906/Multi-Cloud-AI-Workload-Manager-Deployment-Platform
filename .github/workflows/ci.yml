@@ -103,6 +103,7 @@ jobs:
             --model-name ci-test-model \
             --gpu A100 \
             --region us-east \
+            --skip-docker \
             --api-url http://127.0.0.1:8000
 
       - name: CLI list
